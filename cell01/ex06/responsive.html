@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Boxes Side by Side</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* สีพื้นหลัง */
+        }
+
+        .container {
+            display: flex;
+            width: 100vw; /* ความกว้างเต็มหน้าจอ */
+            height: 100vh; /* ใช้ความสูงเต็มหน้าจอ */
+            flex-wrap: wrap; /* อนุญาตให้กล่องห่อหุ้ม */
+        }
+
+        .box {
+            flex: 1; /* ให้กล่องมีขนาดเท่ากัน */
+            padding: 20px; /* ระยะห่างภายในกล่อง */
+            color: #fff; /* สีข้อความ */
+            display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่งข้อความ */
+            justify-content: left; /* จัดข้อความในแนวนอน */
+            align-items: center; /* จัดข้อความในแนวตั้งตรงกลาง */
+            font-size: 1.5em; /* ขนาดตัวอักษร */
+            border: 2px solid #a19f9f; /* กรอบกล่องสีเทาอ่อน */
+            box-sizing: border-box; /* รวมขนาดของกรอบในขนาดกล่อง */
+            min-height: 150px; /* กำหนดความสูงขั้นต่ำ */
+        }
+
+        .box1 {
+            background-color: #7c5338; /* สีพื้นหลังของกล่องแรก */
+        }
+
+        .box2 {
+            background-color: #d12d2d; /* สีพื้นหลังของกล่องที่สอง */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <p>I'm so</p>
+        </div>
+        <div class="box box2">
+            <p>Tired</p>
+        </div>
+    </div>
+</body>
+</html>
 

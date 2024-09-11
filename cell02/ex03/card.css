@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+.card {
+    background-color: #cee8f5; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+    width: 300px; /* Fixed width */
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    color: #333; /* Dark gray color */
+}
+
+.invisible-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invisible-table td {
+    padding: 10px;
+    border: none;
+}
+
+.profile-picture img {
+    border-radius: 50%; /* Circular profile picture */
+    width: 100px; /* Fixed width for profile picture */
+    height: 100px; /* Fixed height for profile picture */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.login {
+    font-weight: bold;
+    color: #555; /* Darker gray color */
+}
+
+.description {
+    color: #777; /* Lighter gray color */
+}
+
+.social-networks img {
+    width: 24px; /* Small icons */
+    height: 24px;
+    margin: 0 5px; /* Space between icons */
+}
+
+.social-networks a {
+    text-decoration: none;
+}
+
+.contact-button a {
+    display: inline-block;
+    background-color: #ba72aa; /* Blue background for button */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-button a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

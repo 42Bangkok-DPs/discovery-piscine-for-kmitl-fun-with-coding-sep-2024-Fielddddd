@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #todoList {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+        #todoList li {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        #todoList li:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <button onclick="addTodo()">NEW</button>
+    <ul id="todoList"></ul>
+
+    <script src="todo.js"></script>
+</body>
+</html>
