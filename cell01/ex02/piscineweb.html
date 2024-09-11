@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piscine Web</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* ตั้งสีพื้นหลังให้เทาอ่อน */
+            margin: 0;
+            font-family: Arial, sans-serif; /* ตั้งฟอนต์สำหรับหน้าเว็บ */
+            text-align: center; /* จัดข้อความและรูปภาพให้ตรงกลาง */
+        }
+
+        h1 {
+            font-size: 4em; /* ขนาดตัวอักษรใหญ่ */
+            margin: 20px 0; /* ระยะห่างบนและล่างของ h1 */
+            color: #d11ba7; /* สีตัวอักษร */
+            text-align: center; /* จัดข้อความให้ตรงกลาง */
+        }
+
+        .images-container {
+            display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพให้แสดงข้างๆ กัน */
+            justify-content: center; /* จัดตำแหน่งรูปภาพให้อยู่ตรงกลาง */
+            gap: 30px; /* ระยะห่างระหว่างรูปภาพ */
+            margin: 30px; /* ระยะห่างรอบๆ container */
+            flex-wrap: wrap;
+        }
+
+        .images-container img {
+            width: 500px; /* กำหนดความกว้างของรูปภาพ */
+            height: 300px; /* กำหนดความสูงของรูปภาพ */
+            object-fit: cover; /* ปรับขนาดรูปภาพให้พอดีกับขนาดที่กำหนด */
+            border: 2px solid #ccc; /* เพิ่มขอบรอบๆ รูปภาพ */
+            border-radius: 8px; /* มุมของรูปภาพโค้งมน */
+        }
+    </style>
+</head>
+<body>
+    <h1>Piscine Web</h1>
+
+    <div class="images-container">
+        <img src="https://i.redd.it/uj46qikdjkm71.jpg" alt="Image 1">
+        <img src="https://ไทยหลังอานมูลจันทร์.com/assets/images/dsc01630-2-3000x2000.jpg" alt="Image 2">
+    </div>
+</body>
+</html>
+
 
