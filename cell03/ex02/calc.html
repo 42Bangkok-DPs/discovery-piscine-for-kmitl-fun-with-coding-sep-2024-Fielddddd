@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Advanced Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,17 +22,18 @@
             padding: 20px;
             color: white;
         }
-        .display {
+        .input-field, .result-field {
             width: 100%;
-            height: 60px;
+            height: 50px;
             background-color: #222;
             border: none;
             border-radius: 5px;
             color: white;
-            font-size: 1.5em;
+            font-size: 1.2em;
             text-align: right;
             padding: 10px;
             box-sizing: border-box;
+            margin-bottom: 10px;
         }
         .button-container {
             display: grid;
@@ -68,102 +69,94 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" class="display" readonly>
+        <input type="text" id="input1" class="input-field" placeholder="Input 1">
+        <input type="text" id="input2" class="input-field" placeholder="Input 2">
+        <input type="text" id="result" class="result-field" readonly placeholder="Result">
         <div class="button-container">
-            <button class="button double" onclick="clearDisplay()">C</button>
-            <button class="button operator" onclick="setOperation('/')">/</button>
-            <button class="button operator" onclick="setOperation('*')">*</button>
-            <button class="button operator" onclick="setOperation('%')">%</button>
-            <button class="button" onclick="appendNumber(7)">7</button>
-            <button class="button" onclick="appendNumber(8)">8</button>
-            <button class="button" onclick="appendNumber(9)">9</button>
-            <button class="button operator" onclick="setOperation('-')">-</button>
-            <button class="button" onclick="appendNumber(4)">4</button>
-            <button class="button" onclick="appendNumber(5)">5</button>
-            <button class="button" onclick="appendNumber(6)">6</button>
-            <button class="button operator" onclick="setOperation('+')">+</button>
-            <button class="button double" onclick="appendNumber(0)">0</button>
-            <button class="button" onclick="appendNumber('.')">.</button>
-            <button class="button wide" onclick="calculate()">Try me!</button>
+            <button class="button" onclick="setOperation('+')">+</button>
+            <button class="button" onclick="setOperation('-')">-</button>
+            <button class="button" onclick="setOperation('*')">*</button>
+            <button class="button" onclick="setOperation('/')">/</button>
+            <button class="button" onclick="setOperation('%')">%</button>
+            <button class="button double" onclick="clearAll()">C</button>
+            <button class="button wide" onclick="calculate()">Calculate</button>
         </div>
     </div>
 
     <script>
         let currentOperation = null;
-        let leftOperand = '';
-        let rightOperand = '';
-
-        function appendNumber(number) {
-            if (currentOperation === null) {
-                leftOperand += number;
-                updateDisplay(leftOperand);
-            } else {
-                rightOperand += number;
-                updateDisplay(leftOperand + ' ' + currentOperation + ' ' + rightOperand);
-            }
-        }
 
         function setOperation(operator) {
-            if (leftOperand !== '') {
-                currentOperation = operator;
-                updateDisplay(leftOperand + ' ' + currentOperation);
-            }
+            currentOperation = operator;
         }
 
         function calculate() {
-            const left = parseFloat(leftOperand);
-            const right = parseFloat(rightOperand);
+            const input1 = document.getElementById('input1').value.trim();
+            const input2 = document.getElementById('input2').value.trim();
+            const resultField = document.getElementById('result');
 
-            if (isNaN(left) || isNaN(right)) {
-                alert('Error :(');
+            // ตรวจสอบว่า input สามารถแปลงเป็นตัวเลขได้
+            const number1 = parseFloat(input1);
+            const number2 = parseFloat(input2);
+
+            // ตรวจสอบข้อผิดพลาด
+            if (isNaN(number1) || isNaN(number2)) {
+                alert("Error.");
+                console.log("Error.");
                 return;
             }
 
+            // ตรวจสอบว่ามีการใช้เครื่องหมายลบใน input
+            if (input1.includes('-') || input2.includes('-')) {
+                alert("Error.");
+                console.log("Error");
+                return;
+            }
+
+            // การคำนวณ
             let result;
             switch (currentOperation) {
                 case '+':
-                    result = left + right;
+                    result = number1 + number2;
                     break;
                 case '-':
-                    result = left - right;
+                    result = number1 - number2;
                     break;
                 case '*':
-                    result = left * right;
+                    result = number1 * number2;
                     break;
                 case '/':
-                    if (right === 0) {
-                        alert("It’s over 9000!");
-                        console.log("It’s over 9000!");
+                    if (number2 === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
                         return;
                     }
-                    result = left / right;
+                    result = number1 / number2;
                     break;
                 case '%':
-                    if (right === 0) {
-                        alert("It’s over 9000!");
-                        console.log("It’s over 9000!");
+                    if (number2 === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
                         return;
                     }
-                    result = left % right;
+                    result = number1 % number2;
                     break;
                 default:
+                    alert("Error : Please select a valid operation.");
+                    console.log("Error : Please select a valid operation.");
                     return;
             }
 
+            resultField.value = result;
             alert('Result: ' + result);
             console.log('Result:', result);
-            clearDisplay();
         }
 
-        function clearDisplay() {
-            leftOperand = '';
-            rightOperand = '';
+        function clearAll() {
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+            document.getElementById('result').value = '';
             currentOperation = null;
-            updateDisplay('');
-        }
-
-        function updateDisplay(value) {
-            document.getElementById('display').value = value;
         }
 
         // ตั้งเวลาแสดงการแจ้งเตือนทุก 30 วินาที
