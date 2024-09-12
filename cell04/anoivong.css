@@ -22,19 +22,43 @@ nav {
     z-index: 1000;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.home-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 0;
+}
+
 nav ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    padding: 15px;
+    padding: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+nav ul li a:hover, .home-button:hover {
+    background-color: #555;
 }
 
 .container {
@@ -49,7 +73,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 0 40px 0; /* เพิ่ม padding-top เพื่อให้เนื้อหาไม่ถูกบังด้วย navbar */
+    padding: 100px 0 40px 0;
 }
 
 h1 {
