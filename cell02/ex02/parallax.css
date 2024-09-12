@@ -7,7 +7,7 @@ body {
 
 /* Background Image Section */
 .background-image {
-    background-image: url('https://wallpapercat.com/w/full/0/d/b/197684-3840x2160-desktop-4k-dog-background-photo.jpg'); /* Replace with your first image URL */
+    background-image: url('https://wallpapercat.com/w/full/0/d/b/197684-3840x2160-desktop-4k-dog-background-photo.jpg'); /* image URL */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Full viewport height */
@@ -18,7 +18,7 @@ body {
 }
 
 .second-image {
-    background-image: url('https://backiee.com/static/wallpapers/560x315/162602.jpg'); /* Replace with your second image URL */
+    background-image: url('https://backiee.com/static/wallpapers/560x315/162602.jpg'); /* image URL */
 }
 
 /* Message Styles */
