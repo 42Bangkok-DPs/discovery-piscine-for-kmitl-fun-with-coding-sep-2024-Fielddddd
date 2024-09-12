@@ -9,7 +9,7 @@ body {
 }
 
 .card {
-    background-color: #cee8f5; /* White background for the card */
+    background-color: #cee8f5; /*background for the card */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
     padding: 20px;
@@ -19,7 +19,7 @@ body {
 
 .title {
     margin: 0;
-    color: #333; /* Dark gray color */
+    color: #333; /*  color */
 }
 
 .invisible-table {
