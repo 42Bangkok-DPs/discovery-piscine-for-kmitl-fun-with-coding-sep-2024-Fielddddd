@@ -1,25 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light background color */
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     margin: 0;
 }
 
 .card {
-    background-color: #cee8f5; /*background for the card */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    background-color: #cee8f5; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px; /* Fixed width */
+    width: 300px; 
     text-align: center;
 }
 
 .title {
     margin: 0;
-    color: #333; /*  color */
+    color: #333; 
 }
 
 .invisible-table {
@@ -33,25 +33,25 @@ body {
 }
 
 .profile-picture img {
-    border-radius: 50%; /* Circular profile picture */
-    width: 100px; /* Fixed width for profile picture */
-    height: 100px; /* Fixed height for profile picture */
-    object-fit: cover; /* Cover to maintain aspect ratio */
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px;
+    object-fit: cover; 
 }
 
 .login {
     font-weight: bold;
-    color: #555; /* Darker gray color */
+    color: #555; 
 }
 
 .description {
-    color: #777; /* Lighter gray color */
+    color: #777; 
 }
 
 .social-networks img {
-    width: 24px; /* Small icons */
+    width: 24px; 
     height: 24px;
-    margin: 0 5px; /* Space between icons */
+    margin: 0 5px; 
 }
 
 .social-networks a {
@@ -60,14 +60,14 @@ body {
 
 .contact-button a {
     display: inline-block;
-    background-color: #ba72aa; /* Blue background for button */
-    color: #fff; /* White text color */
-    padding: 10px 20px; /* Padding inside button */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #ba72aa; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
     text-decoration: none;
     font-weight: bold;
 }
 
 .contact-button a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
