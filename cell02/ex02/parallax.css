@@ -1,16 +1,14 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Background Image Section */
 .background-image {
-    background-image: url('https://wallpapercat.com/w/full/0/d/b/197684-3840x2160-desktop-4k-dog-background-photo.jpg'); /* image URL */
+    background-image: url('https://wallpapercat.com/w/full/0/d/b/197684-3840x2160-desktop-4k-dog-background-photo.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,17 +16,15 @@ body {
 }
 
 .second-image {
-    background-image: url('https://backiee.com/static/wallpapers/560x315/162602.jpg'); /* image URL */
+    background-image: url('https://backiee.com/static/wallpapers/560x315/162602.jpg');
 }
 
-/* Message Styles */
 .message {
     text-align: center;
     color: white;
     padding: 20px;
 }
 
-/* Black Block Section */
 .black-block {
     background-color: black;
     color: white;
