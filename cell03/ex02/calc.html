@@ -15,14 +15,22 @@
             background-color: #f4f4f4;
         }
         .calculator {
-            width: 300px;
+            width: 600px;
             background-color: #333;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
             color: white;
+            display: flex;
+            flex-direction: row;
         }
-        .input-field, .result-field {
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+        }
+        .input-field, .result-field, #operation {
             width: 100%;
             height: 50px;
             background-color: #222;
@@ -35,10 +43,14 @@
             box-sizing: border-box;
             margin-bottom: 10px;
         }
+        #operation {
+            text-align: center;
+        }
         .button-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 10px;
+            width: 150px;
         }
         .button {
             background-color: #444;
@@ -53,62 +65,56 @@
         .button:hover {
             background-color: #555;
         }
-        .button.operator {
-            background-color: #f77;
-        }
-        .button.operator:hover {
-            background-color: #f88;
-        }
-        .button.double {
-            grid-column: span 2;
-        }
-        .button.wide {
-            grid-column: span 4;
-        }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="input1" class="input-field" placeholder="Input 1">
-        <input type="text" id="input2" class="input-field" placeholder="Input 2">
-        <input type="text" id="result" class="result-field" readonly placeholder="Result">
+        <div class="input-group">
+            <input type="text" id="input1" class="input-field" placeholder="Input 1">
+            <input type="text" id="result" class="result-field" readonly placeholder="Result">
+        </div>
         <div class="button-container">
-            <button class="button" onclick="setOperation('+')">+</button>
-            <button class="button" onclick="setOperation('-')">-</button>
-            <button class="button" onclick="setOperation('*')">*</button>
-            <button class="button" onclick="setOperation('/')">/</button>
-            <button class="button" onclick="setOperation('%')">%</button>
-            <button class="button double" onclick="clearAll()">C</button>
-            <button class="button wide" onclick="calculate()">Calculate</button>
+            <select id="operation" class="button">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <button class="button" id="clear">C</button>
+            <button class="button" id="calculate">Calculate</button>
+        </div>
+        <div class="input-group">
+            <input type="text" id="input2" class="input-field" placeholder="Input 2">
         </div>
     </div>
 
     <script>
-        let currentOperation = null;
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateButton = document.getElementById('calculate');
+        const clearButton = document.getElementById('clear');
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2');
+        const resultField = document.getElementById('result');
+        const operationSelect = document.getElementById('operation');
 
-        function setOperation(operator) {
-            currentOperation = operator;
+        function isValidNumber(value) {
+            return !isNaN(value) && value.trim() !== '';
         }
 
-        function calculate() {
-            const input1 = document.getElementById('input1').value.trim();
-            const input2 = document.getElementById('input2').value.trim();
-            const resultField = document.getElementById('result');
+        calculateButton.addEventListener('click', function() {
+            const value1 = input1.value.trim();
+            const value2 = input2.value.trim();
+            const currentOperation = operationSelect.value;
 
-            const number1 = parseFloat(input1);
-            const number2 = parseFloat(input2);
-
-            if (isNaN(number1) || isNaN(number2)) {
+            if (!isValidNumber(value1) || !isValidNumber(value2)) {
                 alert("Error.");
                 console.log("Error.");
                 return;
             }
 
-            if (input1.includes('-') || input2.includes('-')) {
-                alert("Error.");
-                console.log("Error");
-                return;
-            }
+            const number1 = parseFloat(value1);
+            const number2 = parseFloat(value2);
 
             let result;
             switch (currentOperation) {
@@ -138,26 +144,27 @@
                     result = number1 % number2;
                     break;
                 default:
-                    alert("Error : Please select a valid operation.");
-                    console.log("Error : Please select a valid operation.");
+                    alert("Error.");
+                    console.log("Error.");
                     return;
             }
 
             resultField.value = result;
             alert('Result: ' + result);
             console.log('Result:', result);
-        }
+        });
 
-        function clearAll() {
-            document.getElementById('input1').value = '';
-            document.getElementById('input2').value = '';
-            document.getElementById('result').value = '';
-            currentOperation = null;
-        }
+        clearButton.addEventListener('click', function() {
+            input1.value = '';
+            input2.value = '';
+            resultField.value = '';
+            operationSelect.selectedIndex = 0;
+        });
 
         setInterval(() => {
             alert('Please, use me...');
         }, 30000);
+    });
     </script>
 </body>
 </html>
