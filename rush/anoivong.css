@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    background-color: #d8e7fe;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #76584e;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100px; /* ความสูงของแถบเมนู */
+}
+
+.home-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 20px; /* เพิ่ม padding รอบๆ */
+    border-radius: 25px; /* ทำให้ปุ่มมีขอบมน */
+    background-color: #84a29f; /* สีพื้นหลังของปุ่ม */
+    border: 2px solid #555; /* สีกรอบของปุ่ม */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+}
+
+.home-button:hover {
+    background-color: #555;
+    border-color: #666;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0 5px;/* เพิ่มระยะห่างด้านข้างระหว่างปุ่ม */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px; /* เพิ่ม padding รอบๆ */
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px; /* ทำให้ปุ่มมีขอบมน */
+    background-color: #84a29f; /* สีพื้นหลังของปุ่มในรายการ */
+    border: 2px solid #555; /* สีกรอบของปุ่มในรายการ */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-color: #666;
+}
+
+nav ul li a:hover, .home-button:hover {
+    background-color: #555;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 40px 0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    width: 250px; /* กำหนดความกว้าง */
+    height: 250px; /* กำหนดความสูง */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    background-image: url('https://scontent.fbkk5-1.fna.fbcdn.net/v/t39.30808-6/459199949_3032710026870670_6414307547885361126_n.jpg?stp=cp6_dst-jpg&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rHfH33vtvJcQ7kNvgFDOPWo&_nc_ht=scontent.fbkk5-1.fna&_nc_gid=AW7UyDBoU-4ZTigq6VX_ppT&oh=00_AYAY3A-KriFUjD_3ixEyIIqDMrcP631u-9Hu6hx_0bZ8ZQ&oe=66E9A39C'); /* เส้นทางไปยังรูปภาพ */
+    background-size: cover; /* ครอบคลุมพื้นที่ */
+    background-position: center; /* จัดตำแหน่งกลาง */
+    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    border: 2px solid #ddd; /* เพิ่มกรอบถ้าต้องการ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* เพิ่มเงาให้ดูมีมิติ */
+    margin-bottom: 30px;
+}
+
+
+.flex-box, .grid-box {
+    width: 100%;
+    gap: 20px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.info-box {
+    background-color: #c1b2c6;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-box p {
+    line-height: 1.8;
+}
+
+/* สไตล์ของส่วน Contact */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* ระยะห่างระหว่างไอคอน */
+    flex-wrap: wrap; /* รองรับการพับบรรทัดเมื่อหน้าจอเล็ก */
+    margin-top: 20px;
+}
+
+.contact-icons .icon {
+    width: 60px; /* ขนาดของไอคอน */
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.contact-icons .icon img {
+    width: 30px; /* ขนาดของไอคอนที่ใช้แสดง */
+    height: 30px;
+}
+
+.contact-icons .icon:hover {
+    transform: scale(1.1);
+    background-color: #eee; /* เปลี่ยนสีพื้นหลังเมื่อวางเมาส์ */
+}
+
+/* การกำหนดสีพื้นหลังที่แตกต่างกันสำหรับแต่ละไอคอน */
+.icon.facebook {
+    background-color: #3b5998; /* สีพื้นหลังของ Facebook */
+}
+
+.icon.instagram {
+    background-color: #e4405f; /* สีพื้นหลังของ Instagram */
+}
+
+.icon.line {
+    background-color: #00c300; /* สีพื้นหลังของ LINE */
+}
+
+.icon.phone {
+    background-color: #4caf50; /* สีพื้นหลังของ Phone */
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (min-width: 768px) {
+    .flex-box {
+        flex-direction: row;
+    }
+
+    .grid-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-box {
+        flex: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* สไตล์ของแถบเปอร์เซ็น */
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.skill-bar p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bar-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 20px;
+    background-color: #4caf50; /* สีเขียวของแถบเปอร์เซ็น */
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+/* สไตล์ของแถบเปอร์เซ็นในช่องรางวัล */
+.Language-bar {
+    margin-bottom: 20px;
+}
+
+.Language-bar p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bar-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 20px;
+    background-color: #4caf50; /* สีเขียวของแถบเปอร์เซ็น */
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images5.alphacoders.com/112/thumb-1920-1125809.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(236, 214, 182, 0.6); /* สีโปร่งใส 60% */
+    padding: 12px;
+    display: flex;
+    justify-content: flex-end; /* ปุ่มอยู่ขวาสุด */
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: #ECD6B6;
+    border: 3px solid #665a48;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #665A48;
+    text-decoration: none; /* เอาขีดเส้นใต้ลิงก์ออก */
+}
+
+.btn:hover {
+    background-color: rgb(228, 168, 112);
+    text-decoration: none; /* ยังคงเอาขีดเส้นใต้ออกเมื่อ hover */
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* เพิ่มเงาเพื่อให้ตัวอักษรเด่นขึ้น */
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .center-text {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .center-text {
+        font-size: 40px;
+    }
+}
