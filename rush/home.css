@@ -13,10 +13,10 @@ body {
 }
 
 header {
-    background-color: rgba(236, 214, 182, 0.6); /* สีโปร่งใส 60% */
+    background-color: rgba(236, 214, 182, 0.6); 
     padding: 12px;
     display: flex;
-    justify-content: flex-end; /* ปุ่มอยู่ขวาสุด */
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     position: fixed;
@@ -39,12 +39,11 @@ header {
     font-size: 18px;
     font-weight: bold;
     color: #665A48;
-    text-decoration: none; /* เอาขีดเส้นใต้ลิงก์ออก */
-}
+    text-decoration: none; 
 
 .btn:hover {
     background-color: rgb(228, 168, 112);
-    text-decoration: none; /* ยังคงเอาขีดเส้นใต้ออกเมื่อ hover */
+    text-decoration: none;
 }
 
 .center-text {
@@ -54,7 +53,7 @@ header {
     transform: translate(-50%, -50%);
     font-size: 80px;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* เพิ่มเงาเพื่อให้ตัวอักษรเด่นขึ้น */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
     z-index: 1;
 }
 
