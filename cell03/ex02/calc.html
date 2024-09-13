@@ -95,25 +95,21 @@
             const input2 = document.getElementById('input2').value.trim();
             const resultField = document.getElementById('result');
 
-            // ตรวจสอบว่า input สามารถแปลงเป็นตัวเลขได้
             const number1 = parseFloat(input1);
             const number2 = parseFloat(input2);
 
-            // ตรวจสอบข้อผิดพลาด
             if (isNaN(number1) || isNaN(number2)) {
                 alert("Error.");
                 console.log("Error.");
                 return;
             }
 
-            // ตรวจสอบว่ามีการใช้เครื่องหมายลบใน input
             if (input1.includes('-') || input2.includes('-')) {
                 alert("Error.");
                 console.log("Error");
                 return;
             }
 
-            // การคำนวณ
             let result;
             switch (currentOperation) {
                 case '+':
@@ -159,7 +155,6 @@
             currentOperation = null;
         }
 
-        // ตั้งเวลาแสดงการแจ้งเตือนทุก 30 วินาที
         setInterval(() => {
             alert('Please, use me...');
         }, 30000);
