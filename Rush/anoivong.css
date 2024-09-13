@@ -11,14 +11,14 @@ html {
 body {
     font-family: 'Kanit', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #d8e7fe;
 }
 
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #76584e;
     z-index: 1000;
 }
 
@@ -29,6 +29,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    height: 100px; /* ความสูงของแถบเมนู */
 }
 
 .home-button {
@@ -36,7 +37,17 @@ nav {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    padding: 15px 0;
+    padding: 15px 20px; /* เพิ่ม padding รอบๆ */
+    border-radius: 25px; /* ทำให้ปุ่มมีขอบมน */
+    background-color: #84a29f; /* สีพื้นหลังของปุ่ม */
+    border: 2px solid #555; /* สีกรอบของปุ่ม */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+}
+
+.home-button:hover {
+    background-color: #555;
+    border-color: #666;
 }
 
 nav ul {
@@ -47,14 +58,25 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0;
+    padding: 0 5px;/* เพิ่มระยะห่างด้านข้างระหว่างปุ่ม */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 15px;
+    padding: 15px 20px; /* เพิ่ม padding รอบๆ */
     display: block;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px; /* ทำให้ปุ่มมีขอบมน */
+    background-color: #84a29f; /* สีพื้นหลังของปุ่มในรายการ */
+    border: 2px solid #555; /* สีกรอบของปุ่มในรายการ */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-color: #666;
 }
 
 nav ul li a:hover, .home-button:hover {
@@ -88,15 +110,16 @@ h2 {
 }
 
 .profile-picture {
-    width: 200px; /* กำหนดความกว้าง */
-    height: 200px; /* กำหนดความสูง */
+    width: 250px; /* กำหนดความกว้าง */
+    height: 250px; /* กำหนดความสูง */
     border-radius: 50%; /* ทำให้เป็นวงกลม */
-    background-image: url('https://i.pinimg.com/736x/61/f2/b5/61f2b5cdeb7187f5452b641298350d82.jpg'); /* เส้นทางไปยังรูปภาพ */
+    background-image: url('https://scontent.fbkk5-1.fna.fbcdn.net/v/t39.30808-6/459199949_3032710026870670_6414307547885361126_n.jpg?stp=cp6_dst-jpg&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rHfH33vtvJcQ7kNvgFDOPWo&_nc_ht=scontent.fbkk5-1.fna&_nc_gid=AW7UyDBoU-4ZTigq6VX_ppT&oh=00_AYAY3A-KriFUjD_3ixEyIIqDMrcP631u-9Hu6hx_0bZ8ZQ&oe=66E9A39C'); /* เส้นทางไปยังรูปภาพ */
     background-size: cover; /* ครอบคลุมพื้นที่ */
     background-position: center; /* จัดตำแหน่งกลาง */
     background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
     border: 2px solid #ddd; /* เพิ่มกรอบถ้าต้องการ */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* เพิ่มเงาให้ดูมีมิติ */
+    margin-bottom: 30px;
 }
 
 
@@ -116,7 +139,7 @@ h2 {
 }
 
 .info-box {
-    background-color: #fff;
+    background-color: #c1b2c6;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
