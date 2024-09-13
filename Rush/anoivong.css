@@ -262,11 +262,11 @@ h2 {
 }
 
 /* สไตล์ของแถบเปอร์เซ็นในช่องรางวัล */
-.award-bar {
+.Language-bar {
     margin-bottom: 20px;
 }
 
-.award-bar p {
+.Language-bar p {
     margin-bottom: 5px;
     font-weight: bold;
 }
