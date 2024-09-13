@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.home-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+nav ul li a:hover, .home-button:hover {
+    background-color: #555;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 40px 0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    width: 200px; /* กำหนดความกว้าง */
+    height: 200px; /* กำหนดความสูง */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    background-image: url('https://i.pinimg.com/736x/61/f2/b5/61f2b5cdeb7187f5452b641298350d82.jpg'); /* เส้นทางไปยังรูปภาพ */
+    background-size: cover; /* ครอบคลุมพื้นที่ */
+    background-position: center; /* จัดตำแหน่งกลาง */
+    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    border: 2px solid #ddd; /* เพิ่มกรอบถ้าต้องการ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+
+.flex-box, .grid-box {
+    width: 100%;
+    gap: 20px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.info-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-box p {
+    line-height: 1.8;
+}
+
+/* สไตล์ของส่วน Contact */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* ระยะห่างระหว่างไอคอน */
+    flex-wrap: wrap; /* รองรับการพับบรรทัดเมื่อหน้าจอเล็ก */
+    margin-top: 20px;
+}
+
+.contact-icons .icon {
+    width: 60px; /* ขนาดของไอคอน */
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.contact-icons .icon img {
+    width: 30px; /* ขนาดของไอคอนที่ใช้แสดง */
+    height: 30px;
+}
+
+.contact-icons .icon:hover {
+    transform: scale(1.1);
+    background-color: #eee; /* เปลี่ยนสีพื้นหลังเมื่อวางเมาส์ */
+}
+
+/* การกำหนดสีพื้นหลังที่แตกต่างกันสำหรับแต่ละไอคอน */
+.icon.facebook {
+    background-color: #3b5998; /* สีพื้นหลังของ Facebook */
+}
+
+.icon.instagram {
+    background-color: #e4405f; /* สีพื้นหลังของ Instagram */
+}
+
+.icon.line {
+    background-color: #00c300; /* สีพื้นหลังของ LINE */
+}
+
+.icon.phone {
+    background-color: #4caf50; /* สีพื้นหลังของ Phone */
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (min-width: 768px) {
+    .flex-box {
+        flex-direction: row;
+    }
+
+    .grid-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-box {
+        flex: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* สไตล์ของแถบเปอร์เซ็น */
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.skill-bar p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bar-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 20px;
+    background-color: #4caf50; /* สีเขียวของแถบเปอร์เซ็น */
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+/* สไตล์ของแถบเปอร์เซ็นในช่องรางวัล */
+.award-bar {
+    margin-bottom: 20px;
+}
+
+.award-bar p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bar-container {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 20px;
+    background-color: #4caf50; /* สีเขียวของแถบเปอร์เซ็น */
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}

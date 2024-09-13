@@ -9,22 +9,23 @@ html {
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #c0dbc7;
 }
 
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(236, 214, 182);
     z-index: 1000;
+    padding: 8px;
 }
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -32,11 +33,11 @@ nav {
 }
 
 .home-button {
-    color: white;
+    color: #665A48;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    padding: 15px 0;
+    padding: 15px 20px;
 }
 
 nav ul {
@@ -44,21 +45,20 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 nav ul li {
-    padding: 0;
+    padding: 0 10px;
 }
 
 nav ul li a {
-    color: white;
+    color: #665A48;
     text-decoration: none;
     padding: 15px;
     display: block;
-}
-
-nav ul li a:hover, .home-button:hover {
-    background-color: #555;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .container {
@@ -91,9 +91,12 @@ h2 {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: #ddd;
+    background-image: url('https://i.ibb.co/Jcm5jS1/453723805-7996758347110304-614099704994531688-n.jpg');
+    background-size: cover;
+    background-position: center;
     margin-bottom: 20px;
 }
+
 
 .flex-box, .grid-box {
     width: 100%;
@@ -138,11 +141,18 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
 }
 
-.icon:hover {
-    transform: scale(1.1);
+.icon.facebook {
+    background-image: url('https://i.pinimg.com/originals/84/68/5b/84685ba9637a951591040426a46da70f.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.icon.ig {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8ecQ8MtNrNICUox6fMLke5i7tatCXUvJ8g&s');
+    background-size: cover;
+    background-position: center;
 }
 
 .icon img {
