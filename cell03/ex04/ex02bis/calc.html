@@ -96,6 +96,10 @@
             return !isNaN(value) && value.trim() !== '';
         }
 
+        function isInteger(value) {
+            return Number.isInteger(value);
+        }
+
         $('#calculate').click(function() {
             const input1 = $('#input1').val().trim();
             const input2 = $('#input2').val().trim();
@@ -106,11 +110,25 @@
                 console.log("Error.");
                 return;
             }
+            
 
             const number1 = parseFloat(input1);
             const number2 = parseFloat(input2);
 
             let result;
+
+            if (!isInteger(number1) || !isInteger(number2)) {
+                alert("Error.");
+                console.log("Error.");
+                return;
+            }
+
+            if (number1 < 0 || number2 < 0) {
+                        alert("Error.");
+                        console.log("Error.");
+                        return;
+                    }
+            
             switch (currentOperation) {
                 case '+':
                     result = number1 + number2;
