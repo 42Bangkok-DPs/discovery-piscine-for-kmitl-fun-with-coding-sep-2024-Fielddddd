@@ -101,6 +101,9 @@
         function isValidNumber(value) {
             return !isNaN(value) && value.trim() !== '';
         }
+        function isInteger(value) {
+            return Number.isInteger(value);
+        }
 
         calculateButton.addEventListener('click', function() {
             const value1 = input1.value.trim();
