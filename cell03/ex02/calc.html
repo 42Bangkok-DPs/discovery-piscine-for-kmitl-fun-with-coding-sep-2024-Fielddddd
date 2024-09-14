@@ -120,6 +120,19 @@
             const number2 = parseFloat(value2);
 
             let result;
+            
+            if (!isInteger(number1) || !isInteger(number2)) {
+                alert("Error.");
+                console.log("Error.");
+                return;
+            }
+
+            if (number1 < 0 || number2 < 0) {
+                        alert("Error.");
+                        console.log("Error.");
+                        return;
+                    }
+            
             switch (currentOperation) {
                 case '+':
                     result = number1 + number2;
